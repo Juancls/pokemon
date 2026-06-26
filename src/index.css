@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.jogo-container {
+    max-width: 400px;
+    margin: 400px auto;
+    margin-top: 40px;
+    padding: 20px;
+    font-family: 'Press Start 2P', monospace;
+    background-color: #8b956d; /* Cor clássica da tela do Game Boy */
+    border: 10px solid #555;
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 10px 0 #333;
+    color: #0f380f; /* Verde escuro do display original */
+}
+
+.placer, .placar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    border-bottom: 3px double #0f380f;
+    padding-bottom: 10px;
+}
+
+.tabuleiro h2 {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.container-img {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9bbc0f; /* Tom mais claro para destacar o sprite */
+    border: 4px solid #0f380f;
+    margin-bottom: 20px;
+    image-rendering: pixelated; /* Mantém os pixels nítidos */
+}
+
+.sprite {
+    height: 160px;
+    width: 160px;
+}
+
+.sprite.escondido {
+    filter: brightness(0) contrast(2);
+}
+
+.sprite.revelado {
+    filter: none;
+}
+
+.acertou, .errou {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin: 15px 0;
+    padding: 8px;
+    border: 3px solid #0f380f;
+    background-color: #9bbc0f;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-opcao {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    background-color: #9bbc0f;
+    border: 3px solid #0f380f;
+    color: #0f380f;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #0f380f;
+}
+
+.btn-opcao:active:not(:disabled) {
+    box-shadow: 0px 0px 0 #0f380f;
+    transform: translate(2px, 2px);
+}
+
+.btn-opcao.correta {
+    background-color: #0f380f;
+    color: #9bbc0f;
+}
+
+.btn-opcao.errada {
+    background-color: #306230;
+    color: #9bbc0f;
+    text-decoration: line-through;
+}
+
+.btn-proximo, .btn-reiniciar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    border: 3px solid #0f380f;
+    background-color: #0f380f;
+    color: #9bbc0f;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #306230;
+    text-transform: uppercase;
+}
+
+.btn-proximo:active, .btn-reiniciar:active {
+    box-shadow: 0 0 0 #0f380f;
+    transform: translate(2px, 2px);
+}
+
+.fim-jogo h2 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.fim-jogo p {
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+.loading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .jogo-container {
+        margin: 10px;
+        padding: 15px;
+        border-width: 6px;
+    }
+
+    .tela-inicial h1 {
+        font-size: 1.5rem;
+    }
+
+    .tela-inicial h2 {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .container-img {
+        height: 180px;
+    }
+
+    .sprite {
+        height: 140px;
+        width: 140px;
+    }
+
+    .btn-opcao {
+        padding: 16px 10px;
+        font-size: 0.6rem;
+    }
+
+    .tabuleiro h2 {
+        font-size: 0.75rem;
+    }
+}
